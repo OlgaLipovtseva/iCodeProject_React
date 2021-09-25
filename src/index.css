@@ -7,6 +7,66 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.navbar {
+  background-color: #cbc8cf;
+      margin-bottom: 0;
+      border: 0;
+      opacity: 0.9;
+        }
+       
+ .navbar-brand {
+box-shadow: 2px 2px lightgray;
+ } 
+
+ .form-sign {
+max-width: 400px;
+ }
+
+ .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #c6d9ff;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+
+}
+.card {
+  box-shadow: 3px 3px 2px #cbc8cf;
+}
+.card-music:hover .overlay {
+  width: 100%;
+}
+.text-album {
+  white-space: nowrap; 
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+  /*  Small devices (landscape phones, 576px and up) 
+@media (max-width: 576px) { } */
+
+/*Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 767px) {
+
+  .carousel-caption {
+    display: none; /* Hide the carousel text */
+  }
+  .top-image {
+    display: none;
+  }
+/*  .nav-additional-text {
+    display: none;
+  } */
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
