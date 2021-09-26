@@ -22,6 +22,11 @@ box-shadow: 2px 2px lightgray;
 max-width: 400px;
  }
 
+.refOnPrimary {
+  color: #cbc8cf;
+  text-decoration-style: solid;
+}
+ /* page Music - cards with overlay*/
  .overlay {
   position: absolute;
   bottom: 0;
