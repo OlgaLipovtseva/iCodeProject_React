@@ -1,3 +1,7 @@
+:root {
+  --myBlue:rgb(28, 67, 105);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Navigation bar */
 .navbar {
   background-color: #cbc8cf;
       margin-bottom: 0;
@@ -18,14 +23,41 @@ body {
 box-shadow: 2px 2px lightgray;
  } 
 
+ /* Sign in, sign pu forms */
  .form-sign {
 max-width: 400px;
  }
 
-.refOnPrimary {
+
+ /* links on primary color */
+ .refOnPrimary {
   color: #cbc8cf;
   text-decoration-style: solid;
 }
+
+.textWarning {
+  color: red;
+}
+
+ .card {
+  box-shadow: 3px 3px 2px #cbc8cf;
+}
+
+/* page Store product card */
+.card-product {
+  max-width: 300px;
+}
+
+.buttonToCart {
+  visibility:hidden;
+}
+.card-product:hover .buttonToCart{
+  visibility: visible;
+}
+.card-product:hover {
+  border-color: var(--myBlue);
+}
+
  /* page Music - cards with overlay*/
  .overlay {
   position: absolute;
@@ -39,9 +71,7 @@ max-width: 400px;
   transition: .5s ease;
 
 }
-.card {
-  box-shadow: 3px 3px 2px #cbc8cf;
-}
+
 .card-music:hover .overlay {
   width: 100%;
 }
