@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 
 import * as ROLES from "../../constants/roles";
 import * as ROUTES from "../../constants/routes";
@@ -9,11 +9,12 @@ import { AuthUserContext } from "../Session";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, NavDropdown, Container, Image } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 // two lines Navbar (colapsable and sticky on top) with image at the top, using bootstrap react library
 //shadow for logo and hiding top image on small screens in CSS
 const Navigation = () => (
-  <Navbar bg="light" expand="md" sticky="top">
+  <Navbar variant="dark" expand="md" sticky="top">
     <Container>
       <LogoMenu />
       <ToggleMenu />
@@ -34,33 +35,37 @@ const Navigation = () => (
 
 const LogoMenu = () => (
   <Navbar.Brand href={ROUTES.LANDING}>
-    <Image src="/Images/logo.png" width="70" fluid />
+    <Image className="logo-image" src="/Images/logo.png" width="70" fluid />
   </Navbar.Brand>
 );
 
 const ToggleMenu = () => <Navbar.Toggle aria-controls="my-navbar-nav" />;
 
-const MainMenuWithImage = () => (
-  <Nav className="flex-column">
-    <ul className="top-image">
-      <Image src="/Images/city.jpg" height="20" fluid />
-    </ul>
-    <Navbar.Collapse id="my-navbar-nav" className="justify-content-center">
-      <Nav className="mr-auto" activeKey={ROUTES.LANDING}
-  onSelect={(selectedKey, activeKey) => activeKey={selectedKey}}>
-        <Nav.Link href={ROUTES.LANDING}>HOME</Nav.Link>
-        <Nav.Link href={ROUTES.HISTORY}>HISTORY</Nav.Link>
-        <Nav.Link href={ROUTES.MUSIC}>MUSIC</Nav.Link>
-        <Nav.Link href={ROUTES.STORE}>STORE</Nav.Link>
+// main two rows menu with top image
+class MainMenuWithImage extends Component {
+  render() {
+    return (
+      <Nav className="flex-column">
+        <ul className="top-image">
+          <Image src="/Images/topimage.png" height="20" fluid />
+        </ul>
+        <Navbar.Collapse id="my-navbar-nav" className="justify-content-center">
+          <Nav className="mr-auto" >
+            <Nav.Link as={Link} to={ROUTES.LANDING}>HOME</Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.HISTORY}>HISTORY</Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.MUSIC}>MUSIC</Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.STORE}>STORE</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Nav>
-    </Navbar.Collapse>
-  </Nav>
-);
+    );
+  }
+}
 
 const UserCartMenuNoUser = () => (
   <Nav className="navbar-right">
-    <Nav.Link href={ROUTES.SIGN_IN}>SIGN IN</Nav.Link>
-    <Nav.Link href={ROUTES.LANDING}>
+    <Nav.Link as={Link} to={ROUTES.SIGN_IN}>SIGN IN</Nav.Link>
+    <Nav.Link as={Link} to={ROUTES.LANDING}>
       <i className="bi bi-cart2"></i>
     </Nav.Link>
   </Nav>
@@ -69,7 +74,7 @@ const UserCartMenuNoUser = () => (
 const UserCartMenuWithUser = ({ authUser }) => (
   <Nav className="navbar-right">
     <NavigationUserDropDown authUser={authUser} />
-    <Nav.Link href={ROUTES.LANDING}>
+    <Nav.Link as={Link} to={ROUTES.LANDING}>
       <i className="bi bi-cart2"></i>
     </Nav.Link>
   </Nav>

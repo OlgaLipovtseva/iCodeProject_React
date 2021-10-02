@@ -1,36 +1,42 @@
 :root {
-  --myBlue:rgb(28, 67, 105);
+  --myBlue: #1f2837;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Navigation bar */
+.navbar-dark {
+  background-color: var(--myBlue);
+}
 .navbar {
-  background-color: #cbc8cf;
-      margin-bottom: 0;
-      border: 0;
-      opacity: 0.9;
-        }
-       
- .navbar-brand {
-box-shadow: 2px 2px lightgray;
- } 
+  opacity: 0.9;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
 
- /* Sign in, sign pu forms */
- .form-sign {
-max-width: 400px;
- }
+.navbar-brand {
+  padding: 5px;
+  -webkit-box-shadow: 0 0 3px 3px rgba(253, 253, 253, 0.6);
+  box-shadow: 0 0 3px 3px rgba(253, 253, 253, 0.6);
+}
+.top-image {
+  margin: 0em;
+}
 
+/* Sign in, sign pu forms */
+.form-sign {
+  max-width: 400px;
+}
 
- /* links on primary color */
- .refOnPrimary {
+/* links on primary color */
+.refOnPrimary {
   color: #cbc8cf;
   text-decoration-style: solid;
 }
@@ -39,7 +45,7 @@ max-width: 400px;
   color: red;
 }
 
- .card {
+.card {
   box-shadow: 3px 3px 2px #cbc8cf;
 }
 
@@ -49,17 +55,17 @@ max-width: 400px;
 }
 
 .buttonToCart {
-  visibility:hidden;
+  visibility: hidden;
 }
-.card-product:hover .buttonToCart{
+.card-product:hover .buttonToCart {
   visibility: visible;
 }
 .card-product:hover {
   border-color: var(--myBlue);
 }
 
- /* page Music - cards with overlay*/
- .overlay {
+/* page Music - cards with overlay*/
+.overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -68,15 +74,14 @@ max-width: 400px;
   overflow: hidden;
   width: 0;
   height: 100%;
-  transition: .5s ease;
-
+  transition: 0.5s ease;
 }
 
 .card-music:hover .overlay {
   width: 100%;
 }
 .text-album {
-  white-space: nowrap; 
+  white-space: nowrap;
   position: absolute;
   overflow: hidden;
   top: 50%;
@@ -84,25 +89,23 @@ max-width: 400px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-  /*  Small devices (landscape phones, 576px and up) 
+/*  Small devices (landscape phones, 576px and up) 
 @media (max-width: 576px) { } */
 
 /*Medium devices (tablets, 768px and up) */
 @media screen and (max-width: 767px) {
-
   .carousel-caption {
     display: none; /* Hide the carousel text */
   }
   .top-image {
     display: none;
   }
-/*  .nav-additional-text {
+  /*  .nav-additional-text {
     display: none;
   } */
 }
 
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
