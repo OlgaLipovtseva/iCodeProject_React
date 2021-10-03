@@ -10,7 +10,7 @@ const Music = () => (
       <Card bg="primary" text="white" className="text-center p-3">
         <h4>To All Dear Fans!</h4>
        <p> All music is shared for free. Please donate {" "} 
-        <a href="https://yoomoney.ru/transfer/a2w" class="alert-link" className="refOnPrimary">
+        <a href="https://yoomoney.ru/transfer/a2w" className="refOnPrimary">
            HERE 
         </a> {" "}
          if you want to support musicians. </p>
@@ -21,7 +21,7 @@ const Music = () => (
         <Card.Body>
           <Card.Title>2021 Light <Badge variant="primary">New</Badge></Card.Title>
           <div className="overlay">
-            <div class="text-album">
+            <div className="text-album">
               <h4>Album 'Light' 2021. </h4>
               <h5>Songs:</h5>
               <ol>
@@ -34,7 +34,7 @@ const Music = () => (
                 <li>Minsk.</li>
                 <li>Munich.</li>
               </ol>
-              <a href="https://disk.yandex.com/d/6bmeof3m1mLTlQ" class="btn btn-secondary">
+              <a href="https://disk.yandex.com/d/6bmeof3m1mLTlQ" className="btn btn-secondary">
                 Download {'>>'}
               </a>
             </div>
@@ -46,8 +46,8 @@ const Music = () => (
         <Card.Img variant="top" src="/Images/Album3.jpg" />
         <Card.Body>
           <Card.Title>2018 Darkness</Card.Title>
-          <div class="overlay">
-            <div class="text-album"><h4>Album 'Darkness' 2018.</h4>
+          <div className="overlay">
+            <div className="text-album"><h4>Album 'Darkness' 2018.</h4>
               <h5>Songs:</h5> 
               <ol >
                 <li>Saragossa. </li>
@@ -59,7 +59,7 @@ const Music = () => (
                 <li>San Antonio.</li>
                 <li>Scarborough.</li>
               </ol>
-              <a href="https://disk.yandex.com/d/6bmeof3m1mLTlQ" class="btn btn-secondary">Download {">>"}</a>
+              <a href="https://disk.yandex.com/d/6bmeof3m1mLTlQ" className="btn btn-secondary">Download {">>"}</a>
             </div>
         </div>
         </Card.Body>
@@ -98,8 +98,8 @@ const Music = () => (
         <Card.Img variant="top" src="/Images/Album2.jpg" />
         <Card.Body>
           <Card.Title>2016 Cloud</Card.Title>
-          <div class="overlay">
-          <div class="text-album"><h4>Album 'Cloud' 2016. </h4>
+          <div className="overlay">
+          <div className="text-album"><h4>Album 'Cloud' 2016. </h4>
               <h5>Songs:</h5> 
               <ol >
                 <li>Lyon. </li>
@@ -108,7 +108,7 @@ const Music = () => (
                 <li>Lviv.</li>
                 <li>Lisbon.</li>
               </ol>
-              <a href="https://disk.yandex.com/d/6bmeof3m1mLTlQ" class="btn btn-secondary">Download {">>"}</a>
+              <a href="https://disk.yandex.com/d/6bmeof3m1mLTlQ" className="btn btn-secondary">Download {">>"}</a>
             </div>
         </div>
         </Card.Body>
@@ -136,8 +136,8 @@ const Music = () => (
         <Card.Img variant="top" src="/Images/Album4.jpg" />
         <Card.Body>
           <Card.Title>2000 Waves</Card.Title>
-          <div class="overlay">
-          <div class="text-album"><h4>Album 'Waves' 2000. </h4>
+          <div className="overlay">
+          <div className="text-album"><h4>Album 'Waves' 2000. </h4>
               <h5>Songs:</h5> 
               <ol >
                 <li>Tula. </li>
@@ -145,7 +145,7 @@ const Music = () => (
                 <li>Tipezk.</li>
                 <li>Tokio.</li>
               </ol>
-              <a href="https://disk.yandex.com/d/6bmeof3m1mLTlQ" class="btn btn-secondary">Download {">>"}</a>
+              <a href="https://disk.yandex.com/d/6bmeof3m1mLTlQ" className="btn btn-secondary">Download {">>"}</a>
             </div>
         </div>
         </Card.Body>
