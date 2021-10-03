@@ -4,7 +4,7 @@ import { addToCart } from "../Cart/cartActions";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, CardDeck, Card, Form, Button, Col } from "react-bootstrap";
+import { Container, CardDeck, Card, Form, Button, Col, Alert } from "react-bootstrap";
 
 import { withFirebase } from "../Firebase";
 import { onValue } from "firebase/database";
@@ -17,19 +17,26 @@ class StorePage extends Component {
     this.state = {
       loading: false,
       products: [],
+      addedToCart:false
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.notShowAlert=this.notShowAlert.bind(this);
   }
 
 
   handleClick(product, size) {
 
-   // size is added in productWithSize
-    this.props.addToCart(productWithSize(product, size));
-    //
+   // size is added in function productWithSize
+    this.setState({addedToCart:true});
+   this.props.addToCart(productWithSize(product, size));
     // console.log(size);
   }
+
+notShowAlert()
+{
+  this.setState({addedToCart:false});
+}
 
   //getting products from firebase to state
   componentDidMount() {
@@ -51,12 +58,16 @@ class StorePage extends Component {
   }
 
   render() {
-    const { products, loading } = this.state;
+    const { products, loading, addedToCart } = this.state;
 
     //
     return (
       <Container>
         {loading && <div>Loading ...</div>}
+       
+        <Alert variant="success" show={addedToCart} onClose={() => this.notShowAlert()} dismissible>
+        <p>Product added to cart!</p></Alert>
+
         <CardDeck>
           {products.map((product) => (
             <ProductCard
