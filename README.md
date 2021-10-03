@@ -1,9 +1,13 @@
 # Learning project for iCode program.
 
-This project is focusing on the fron-end development.
+This project is focusing on the front-end development.
 It is based on React and uses React Bootstrap library and Firebase.
+Bootstrap was chosen to implement better screen size adaptability.
 
 # Parts of the project:
 
-- user authenticatin using Firebase Auth and Firebase Realtime base for role assigning.
-- ecommerce part with Store page and cart.
+- User authentication using Firebase Auth and Firebase Realtime base for role assigning.
+Implemented using React Context. Parts: Sign up, Sign in, Sign out, Forget password; 
+Users account and Admin (accesible only with Admin role) pages.
+
+- Ecommerce part with Store page and cart. Products are loaded from Realtime Firebase. Cart implemented using Redux.
