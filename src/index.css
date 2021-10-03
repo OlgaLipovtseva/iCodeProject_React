@@ -89,6 +89,12 @@ body {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+
+.text-total {
+  text-align: right;
+  color: var(--myBlue);
+}
+
 /*  Small devices (landscape phones, 576px and up) 
 @media (max-width: 576px) { } */
 

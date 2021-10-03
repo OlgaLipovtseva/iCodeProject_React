@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addToCart } from "../Cart/cartActions";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -6,6 +8,7 @@ import { Container, CardDeck, Card, Form, Button, Col } from "react-bootstrap";
 
 import { withFirebase } from "../Firebase";
 import { onValue } from "firebase/database";
+
 
 class StorePage extends Component {
   constructor(props) {
@@ -19,9 +22,13 @@ class StorePage extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+
   handleClick(product, size) {
-    console.log(product);
-    console.log(size);
+
+   // size is added in productWithSize
+    this.props.addToCart(productWithSize(product, size));
+    //
+    // console.log(size);
   }
 
   //getting products from firebase to state
@@ -63,6 +70,13 @@ class StorePage extends Component {
     );
   }
 }
+
+const productWithSize = (product, size) => {
+  return {
+    ...product,
+    chosenSize: size,
+  };
+};
 
 export class ProductCard extends Component {
   render() {
@@ -171,4 +185,12 @@ const ButtonToCart = ({ product, handleClick, size }) => {
   );
 };
 
-export default withFirebase(StorePage);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (product) => {
+      dispatch(addToCart(product));
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(withFirebase(StorePage));

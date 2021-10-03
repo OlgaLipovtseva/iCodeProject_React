@@ -65,7 +65,7 @@ class MainMenuWithImage extends Component {
 const UserCartMenuNoUser = () => (
   <Nav className="navbar-right">
     <Nav.Link as={Link} to={ROUTES.SIGN_IN}>SIGN IN</Nav.Link>
-    <Nav.Link as={Link} to={ROUTES.LANDING}>
+    <Nav.Link as={Link} to={ROUTES.CART}>
       <i className="bi bi-cart2"></i>
     </Nav.Link>
   </Nav>
@@ -74,7 +74,7 @@ const UserCartMenuNoUser = () => (
 const UserCartMenuWithUser = ({ authUser }) => (
   <Nav className="navbar-right">
     <NavigationUserDropDown authUser={authUser} />
-    <Nav.Link as={Link} to={ROUTES.LANDING}>
+    <Nav.Link as={Link} to={ROUTES.CART}>
       <i className="bi bi-cart2"></i>
     </Nav.Link>
   </Nav>

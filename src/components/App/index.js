@@ -11,6 +11,7 @@ import AdminPage from "../Admin";
 import HistoryPage from "../Landing/history";
 import MusicPage from "../Landing/music";
 import StorePage from "../Store";
+import Cart from "../Cart";
 
 import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session";
@@ -28,6 +29,7 @@ const App = () => (
       <Route path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route path={ROUTES.ADMIN} component={AdminPage} />
       <Route path={ROUTES.STORE} component={StorePage} />
+      <Route path={ROUTES.CART} component={Cart} />
     </div>
   </Router>
 );
