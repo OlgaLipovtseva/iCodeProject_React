@@ -1,11 +1,12 @@
 # Learning project for iCode program.
 
-This project is focusing on the front-end development.
+This project is focusing on a front-end development.
 It is based on React and uses React Bootstrap (4) library and Firebase.
-Bootstrap was chosen to implement better screen size adaptability.
+Bootstrap was chosen for better screen size adaptability.
 
-In the project implemented two different approaches using context:
-React Context for User's Authentication and Redux for Cart.
+Implemented two different approaches for context use:
+React Context for User's Authentication 
+and Redux for Cart.
 
 # Parts of the project:
 
@@ -14,4 +15,5 @@ Implemented using React Context. Parts: Sign up, Sign in, Sign out, Forget passw
 Users account and Admin (accessible only with Admin role) pages.
 
 - Ecommerce part with Store page and cart. Products are loaded from Realtime Firebase.
-Cart implemented using Redux. It has options to add or remove a product.
+Cart implemented using Redux. In a cart user can add, substact or remove a product. 
+Admin page shows list of all products with quantities.
