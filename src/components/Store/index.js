@@ -4,11 +4,19 @@ import { addToCart } from "../Cart/cartActions";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, CardDeck, Card, Form, Button, Col, Alert } from "react-bootstrap";
+import {
+  Container,
+  CardDeck,
+  Card,
+  Form,
+  Button,
+  Col,
+  Alert,
+  Spinner,
+} from "react-bootstrap";
 
 import { withFirebase } from "../Firebase";
 import { onValue } from "firebase/database";
-
 
 class StorePage extends Component {
   constructor(props) {
@@ -17,26 +25,24 @@ class StorePage extends Component {
     this.state = {
       loading: false,
       products: [],
-      addedToCart:false
+      addedToCart: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
-    this.notShowAlert=this.notShowAlert.bind(this);
+    this.notShowAlert = this.notShowAlert.bind(this);
   }
 
-
   handleClick(product, size) {
-
-   // size is added in function productWithSize
-    this.setState({addedToCart:true});
-   this.props.addToCart(productWithSize(product, size));
+    // size is added in function productWithSize
+    this.setState({ addedToCart: true });
+    this.props.addToCart(productWithSize(product, size));
     // console.log(size);
   }
 
-notShowAlert()
-{
-  this.setState({addedToCart:false});
-}
+  //alert that product was added to cart
+  notShowAlert() {
+    this.setState({ addedToCart: false });
+  }
 
   //getting products from firebase to state
   componentDidMount() {
@@ -63,10 +69,20 @@ notShowAlert()
     //
     return (
       <Container>
-        {loading && <div>Loading ...</div>}
-       
-        <Alert variant="success" show={addedToCart} onClose={() => this.notShowAlert()} dismissible>
-        <p>Product added to cart!</p></Alert>
+        {loading && (
+          <div>
+            <Spinner animation="border" variant="primary" /> Loading ...
+          </div>
+        )}
+
+        <Alert
+          variant="success"
+          show={addedToCart}
+          onClose={() => this.notShowAlert()}
+          dismissible
+        >
+          <p>Product added to cart!</p>
+        </Alert>
 
         <CardDeck>
           {products.map((product) => (
@@ -94,6 +110,10 @@ export class ProductCard extends Component {
     const { product, handleClick } = this.props;
     const isClothing = product.type === "Clothing";
     const noSizes = !product.size;
+
+    //if a product is Clothing type and there is no sizes availible or for other products if quantity in noSize=0
+    const outOfStock = (isClothing && noSizes) || product.noSize === 0;
+
     return (
       <Card className="card-product text-center">
         <Card.Img variant="top" src={product.image} />
@@ -101,19 +121,21 @@ export class ProductCard extends Component {
           <Card.Title>{product.name}</Card.Title>
           <Card.Text>${product.price}</Card.Text>
 
-          {/*if product is "clothing" and sizes availible: sizes loaded to select input 
+          {/*for out of stock products - warning;
+          if product is "clothing" and sizes availible: sizes loaded to select input 
           + button Add to Cart is also there */}
-
-          {isClothing ? (
-            <Form>
-              {noSizes ? (
-                <Form.Text className="textWarning"> Out of stock </Form.Text>
-              ) : (
-                <SizesList product={product} handleClick={handleClick} />
-              )}
-            </Form>
+          {outOfStock ? (
+            <p className="textWarning"> Out of stock</p>
           ) : (
-            <ButtonToCart product={product} handleClick={handleClick} />
+            <div>
+              {isClothing ? (
+                <Form>
+                  <SizesList product={product} handleClick={handleClick} />
+                </Form>
+              ) : (
+                <ButtonToCart product={product} handleClick={handleClick} />
+              )}
+            </div>
           )}
         </Card.Body>
       </Card>
