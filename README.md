@@ -18,4 +18,6 @@ Users account and Admin (accessible only with Admin role) pages.
 Cart implemented using Redux. In a cart user can add, substact or remove a product. 
 Admin page shows list of all products with quantities.
 
-- Navigation bar with two rows and CSS animation (stars blinking) on hover on the top image. Some menu options are visible only to an  authorized user or to a user with "Admin" role.
+- Navigation bar with two rows with sticky top and CSS animation (stars blinking) on hover on the top image. Some menu options are visible only to an  authorized user or to a user with "Admin" role.
+
+- Info pages: Home, Music, History done with Bootstrap.

@@ -97,9 +97,9 @@ const Music = () => (
       <Card className="card-music">
         <Card.Img variant="top" src="/Images/Album2.jpg" />
         <Card.Body>
-          <Card.Title>2016 Cloud</Card.Title>
+          <Card.Title>2016 Air</Card.Title>
           <div className="overlay">
-          <div className="text-album"><h4>Album 'Cloud' 2016. </h4>
+          <div className="text-album"><h4>Album 'Air' 2016. </h4>
               <h5>Songs:</h5> 
               <ol >
                 <li>Lyon. </li>
