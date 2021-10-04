@@ -17,3 +17,5 @@ Users account and Admin (accessible only with Admin role) pages.
 - Ecommerce part with Store page and cart. Products are loaded from Realtime Firebase.
 Cart implemented using Redux. In a cart user can add, substact or remove a product. 
 Admin page shows list of all products with quantities.
+
+- Navigation bar with two rows with CSS animation (stars blinking) on hover on the top image. Some menu options are visible only to an  authorized user or to a user with "Admin" role.
