@@ -5,15 +5,7 @@ import { addToCart } from "../Cart/cartActions";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
-  Container,
-  CardDeck,
-  Card,
-  Form,
-  Button,
-  Col,
-  Alert,
-  Spinner,
-} from "react-bootstrap";
+  Container,CardColumns,Card,Form, Button,Col,Alert,Spinner} from "react-bootstrap";
 
 import { withFirebase } from "../Firebase";
 import { onValue } from "firebase/database";
@@ -84,7 +76,7 @@ class StorePage extends Component {
           <p>Product added to cart!</p>
         </Alert>
 
-        <CardDeck>
+        <CardColumns>
           {products.map((product) => (
             <ProductCard
               product={product}
@@ -92,7 +84,7 @@ class StorePage extends Component {
               handleClick={this.handleClick}
             />
           ))}
-        </CardDeck>
+        </CardColumns>
       </Container>
     );
   }
