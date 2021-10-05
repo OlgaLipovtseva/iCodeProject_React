@@ -3,9 +3,17 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Card, CardColumns, Badge, Image } from "react-bootstrap";
 
+import ResponsivePlayer from "../VidioPlayer";
+
 //colums of cards from bootstrap with css overlay
 const Music = () => (
   <Container fluid>
+
+ {/* player from react player library    */}
+<h4 className="text-center">Listen to our new album!</h4>
+<ResponsivePlayer url='https://music.youtube.com/watch?v=hvjwGjH5Chw&list=OLAK5uy_nzHYabD0DQt1RQKc388bBlN002V2tco4A'/>
+    
+    <br/>
     <CardColumns>
       <Card bg="primary" text="white" className="text-center p-3">
         <h4>To All Dear Fans!</h4>
