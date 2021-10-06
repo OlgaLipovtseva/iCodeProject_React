@@ -70,7 +70,7 @@ z-index:0;
 }
 /*  */
 
-/* Sign in, sign pu forms */
+/* Sign in, sign up forms */
 .form-sign {
   max-width: 400px;
 }
@@ -89,7 +89,7 @@ z-index:0;
   box-shadow: 3px 3px 2px #cbc8cf;
 }
 
-/* page Store product card */
+/* Store page - product card */
 .card-product {
   max-width: 300px;
 }
@@ -105,7 +105,7 @@ z-index:0;
   border-width: 2px;
 }
 
-/* page Music - cards with overlay*/
+/* Music page- cards with overlay*/
 .overlay {
   position: absolute;
   bottom: 0;
@@ -131,9 +131,16 @@ z-index:0;
   -ms-transform: translate(-50%, -50%);
 }
 
+/* Cart page */
 .text-total {
   text-align: right;
   color: var(--myBlue);
+}
+
+/*Contacts page  */
+#map {
+  height: 300px;
+  width: 300px;
 }
 
 /*  Small devices (landscape phones, 576px and up) 

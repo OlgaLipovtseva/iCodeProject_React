@@ -13,6 +13,7 @@ import MusicPage from "../Landing/music";
 import StorePage from "../Store";
 import Cart from "../Cart";
 import NotFoundPage from "../NotFound";
+import ContactsPage from "../Contacts";
 
 import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session";
@@ -34,6 +35,7 @@ const App = () => (
       <Route path={ROUTES.ADMIN} component={AdminPage} />
       <Route path={ROUTES.STORE} component={StorePage} />
       <Route path={ROUTES.CART} component={Cart} />
+      <Route path={ROUTES.CONTACTS} component={ContactsPage} />
       <Route component={NotFoundPage} />
       </Switch>
     </div>

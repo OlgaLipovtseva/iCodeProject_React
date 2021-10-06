@@ -66,6 +66,9 @@ class MainMenuWithImage extends Component {
             <Nav.Link as={Link} to={ROUTES.STORE}>
               STORE
             </Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.CONTACTS}>
+              CONTACTS
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Nav>

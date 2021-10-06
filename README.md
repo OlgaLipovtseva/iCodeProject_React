@@ -20,4 +20,8 @@ Admin page shows list of all products with quantities.
 
 - Navigation bar with two rows with sticky top and CSS animation (stars blinking) on hover on the top image. Some menu options are visible only to an  authorized user or to a user with "Admin" role.
 
+- Music page has React player ("react-player" library) with Youtube ref.
+
+- Contacts page has location on Google maps implemented with "@googlemaps/js-api-loader".
+
 - Info pages: Home, Music, History done with Bootstrap.
