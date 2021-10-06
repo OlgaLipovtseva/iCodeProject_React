@@ -42,7 +42,7 @@ class PasswordChangeForm extends Component {
   };
  
   render() {
-    const { passwordOne, passwordTwo, error, passwordChanged } = this.state;
+    const { passwordOne, passwordTwo, error } = this.state;
  
     const isInvalid =
       passwordOne !== passwordTwo || passwordOne === '';

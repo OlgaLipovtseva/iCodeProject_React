@@ -1,7 +1,6 @@
 import React from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import { GOOGLE_MAPS_API_KEY } from "../../constants/api-keys";
-import "./maps.css";
 
 //loading map with @googlemaps/js-api-loader library
 const Maps = ({ location }) => {
@@ -25,8 +24,7 @@ const Maps = ({ location }) => {
       });
     })
     .catch((e) => {
-      // do something
-      console.log(e);
+      // error
     });
 
   return <div id="map"></div>;
