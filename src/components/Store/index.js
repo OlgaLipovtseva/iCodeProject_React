@@ -5,7 +5,15 @@ import { addToCart } from "../Cart/cartActions";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
-  Container,CardColumns,Card,Form, Button,Col,Alert,Spinner} from "react-bootstrap";
+  Container,
+  CardColumns,
+  Card,
+  Form,
+  Button,
+  Col,
+  Alert,
+  Spinner,
+} from "react-bootstrap";
 
 import { withFirebase } from "../Firebase";
 import { onValue } from "firebase/database";
@@ -16,12 +24,28 @@ class StorePage extends Component {
 
     this.state = {
       loading: false,
+      productsWithoutFilter: [],
       products: [],
       addedToCart: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.notShowAlert = this.notShowAlert.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
+  }
+
+  handleFilter(event) {
+    const productType = event.target.value;
+    const { productsWithoutFilter } = this.state;
+    if (productType) {
+      const filteredProducts = productsWithoutFilter.filter(
+        (product) => product.type === productType
+      );
+      this.setState({ products: filteredProducts });
+    }
+    else {
+      this.setState({ products: productsWithoutFilter });
+    }
   }
 
   handleClick(product, size) {
@@ -50,6 +74,7 @@ class StorePage extends Component {
       /*  console.log(productsList); */
       this.setState({
         products: productsList,
+        productsWithoutFilter: productsList,
         loading: false,
       });
     });
@@ -61,6 +86,23 @@ class StorePage extends Component {
     //
     return (
       <Container>
+        {/* Filter */}
+        <Container className="filter-wrap">
+          <Form.Label>Filter:</Form.Label>
+          <Form.Control
+            as="select"
+            size="sm"
+            id="filter-select"
+            custom
+            onChange={this.handleFilter}
+          >
+            <option value="">All</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Album">Album</option>
+          </Form.Control>
+        </Container>
+        <hr className="line" />
+
         {loading && (
           <div>
             <Spinner animation="border" variant="primary" /> Loading ...

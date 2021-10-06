@@ -89,7 +89,17 @@ z-index:0;
   box-shadow: 3px 3px 2px #cbc8cf;
 }
 
-/* Store page - product card */
+/* Store page*/
+.filter-wrap {
+  display: flex;
+}
+#filter-select {
+  width: auto;
+}
+.line {
+  margin:0.5em;
+}
+
 .card-product {
   max-width: 300px;
 }
