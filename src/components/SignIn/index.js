@@ -58,7 +58,7 @@ class SignInFormBase extends Component {
     const { email, password, error } = this.state;
 
     const isInvalid = password === "" || email === "";
-    console.log(isInvalid);
+   // console.log(isInvalid);
     return (
       <Form className="form-sign text-center" onSubmit={this.onSubmit}>
         <Form.Group>

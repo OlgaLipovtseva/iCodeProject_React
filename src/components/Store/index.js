@@ -87,20 +87,14 @@ class StorePage extends Component {
     return (
       <Container>
         {/* Filter */}
-        <Container className="filter-wrap">
-          <Form.Label>Filter:</Form.Label>
-          <Form.Control
-            as="select"
-            size="sm"
-            id="filter-select"
-            custom
-            onChange={this.handleFilter}
-          >
+        <Form inline>
+          <Form.Label className="my-1 mr-2">Filter: </Form.Label>
+          <Form.Control as="select" size="sm" id="filter-select" custom onChange={this.handleFilter}>
             <option value="">All</option>
             <option value="Clothing">Clothing</option>
             <option value="Album">Album</option>
           </Form.Control>
-        </Container>
+          </Form>
         <hr className="line" />
 
         {loading && (
