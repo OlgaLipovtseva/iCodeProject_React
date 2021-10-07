@@ -90,9 +90,6 @@ z-index:0;
 }
 
 /* Store page*/
-.filter-wrap {
-  display: flex;
-}
 #filter-select {
   width: auto;
 }
