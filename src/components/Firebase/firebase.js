@@ -54,7 +54,7 @@ class Firebase {
             email: authUser.email,
             ...dbUser,
           };
-          console.log(authUser);
+         // console.log(authUser);
           next(authUser);
         });
       } else {
